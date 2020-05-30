@@ -1,4 +1,4 @@
-# gatsby-remark-dropbox
+# gatsby-remark-dropbox-images
 [![npm version](https://badge.fury.io/js/gatsby-remark-dropbox-images.svg)](https://badge.fury.io/js/gatsby-remark-dropbox-images)
 
 This plugin resolves image tags in markdown files sourced with gatsby-source-dropbox. It currently only supports images in markdown body but not in frontmatter.
