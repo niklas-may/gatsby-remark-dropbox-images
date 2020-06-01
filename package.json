@@ -1,7 +1,7 @@
 {
   "name": "gatsby-remark-dropbox-images",
   "description": "Prepare urls in markdown sourced with gatsby-source-dropbox for gatsby-remark-images",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Niklas May <hello@niklas-may.de>",
   "main": "index.js",
   "license": "MIT",
