@@ -16,14 +16,19 @@ module.exports = ({markdownAST, markdownNode, getNodes, getNode}) => {
 
       // Find the image node that matches the basename and that was stored in the same directory on the dropbox
       const dropboxImageNode = getNodes().filter(node => node.internal.type === 'dropboxImage' && node.directory === directory && node.name === baseName)[0]
-      const { localFile___NODE } = dropboxImageNode
 
-      const localFile = getNode(localFile___NODE)
-      const { absolutePath } = localFile
-
-      // chang the path to be relative and make it point one level up
-      const urlModified = `..${absolutePath.split("gatsby-source-dropbox").pop()}`
-      node.url = urlModified
+      if(dropboxImageNode) {
+        const { localFile___NODE } = dropboxImageNode
+  
+        const localFile = getNode(localFile___NODE)
+        const { absolutePath } = localFile
+  
+        // chang the path to be relative and make it point one level up
+        const urlModified = `..${absolutePath.split("gatsby-source-dropbox").pop()}`
+        node.url = urlModified
+      } else {
+        console.warn(`gatsby-remark-dropbox-images: Can't find dropboxImage for ${node.url} in ${rootNode.path}`)
+      }
     }
   })
 
